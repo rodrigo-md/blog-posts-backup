@@ -83,10 +83,10 @@ _** For the sake of simplicity and because it's widely used the word "test" to r
 # Benefits of automated testing
 
 * **Tests work as a safety net to make changes (refactoring)**: Now we feel confident on changing code because if we break something our tests will warn us
-* **Tests can work as executable documentation if they are descriptive**: Additional to documentation files now we can read our tests to understand how the code works and access to useful examples
+* **Tests can work as live documentation when they are descriptive enough**: Additional to documentation files now we can read our tests to understand how the code works and access to useful examples
 * **Tests prevent wasting unnecessary time on debugging**: Rather than spending time trying to figuring out what is wrong, we use the feedback our broken tests will give us. If we have a bug, we write a new test to expose the error
 * **Tests are the first users of our code**: We can have early feedback from our code, even before running the code if we write the tests before the code
-* **Thinking in testing can lead us to design better our code**: Now we write our code to make it easier to test, to do so we rely on design patterns and best practices to build a decoupled code
+* **Thinking in testing while coding can lead us to a better design**: Now we write our code to make it easier to test, to do so we rely on design patterns and best practices to build a decoupled code
 
 [Here](https://mariocervera.com/non-obvious-benefits-automated-testing)  is a great article written by @[Mario Cervera](@macerub) to complement the benefits of testing.
 
@@ -128,7 +128,7 @@ We'll need to modify our `test` function to support the new requirement in the `
 * Accept strings and errors as the second argument, the expected result
 * Catch any error thrown by the `reverse` function and compare its error message with the message of the expected error
 
-With the new requirements we the resulting code of the `test` function will look like this:
+With the new requirements in mind, the resulting code of the `test` function will look like this:
 
 ```JavaScript
 function test(original, expected) {
@@ -285,9 +285,13 @@ Steps four to six receive different names depending on the type of tests, but al
 
 Yes, absolutely. At least at first, compared to not testing.
 
-Every new skill requires time to develop. In this case, we need to change our mindset to constantly think about how we will be testing something and learn to master the testing library or framework of choice.
+Every new skill requires time to develop. In this case, we need to change our mindset to start thinking about how the code we are writing can be tested. Also, learn to master the testing library or framework of choice.
 
-Even after learning how to write the tests, we'll require an additional effort because we'll be writing two types of code: _tests_ and _production code_. But, **it doesn't mean we'll go twice as slow**. After building enough experience, we'll write tests much faster. Besides, we write automated tests just once if the behavior doesn't change.
+At first it will appear that we are doubling our efforts by writing tests and production code. But, in reality, what was happening was that we were writing only half of the code required by not writing the tests.
+
+> To write tests should be seen as part of implementing the feature or fixing the bug
+
+Writing tests doesn't mean we'll go twice as slow. After building enough experience, we'll write tests much faster. Besides, we'll write automated tests just once and update them only when the behavior they're testing has changed.
 
 Automated tests offer quick feedback (between milliseconds and seconds) and the opportunity to execute the tests as many times as we want without effort. We get all the benefits of testing but with zero-waste.
 
